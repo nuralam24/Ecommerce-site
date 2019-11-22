@@ -36,6 +36,10 @@
                 </li>
             <% } else { %>
                 <li class="main-header__item">
+                    <!-- <li class="main-header__item"> <%= currentUser.username %></li> -->
+                    <li class="main-header__item">
+                            <a class="<%= path === '/cart' ? 'active' : '' %>" href="#"><%= currentUser.username %></a>
+                        </li>
                     <form action="/logout" method="post">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <button type="submit">Logout</button>
